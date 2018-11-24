@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Cryptography: why, how and who to thrust</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/beige.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+
+				<section>
+					<h1>Cryptography</h1>
+					<h3>why, how and who to thrust</h3>
+					<p>Ward De Ridder, ON8WR</p>
+					<p><small>24th of November 2018 <br /> @Ko-Lab mechelen</small></p>
+				</section>
+
+
+				<section id="fragments">
+					<h2>Content</h2>
+					<ul>
+						<li class="fragment">What is cryptography</li>
+						<li class="fragment">History</li>
+						<li class="fragment">Modern cryptography</li>
+						<li class="fragment">Public key encryption</li>
+						<li class="fragment">HTTPS</li>
+						<li class="fragment">PGP / GPG</li>
+						<li class="fragment">keysigning party</li>
+					</ul>	
+				</section>
+
+
+				<section>
+					<h2>What is cryptography</h2>
+					<p>And what can we do with it</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>History</h2>
+					</section>
+					<section>
+						<h3>Signing</h3>
+						<h4>Sealing wax</h4>
+						<img data-src="https://upload.wikimedia.org/wikipedia/commons/3/37/Netherlands_1932-09-30_R-cover_NVPH_169%2C_178%2C_189_reverse.jpg" class="stretch">
+						<p><small><a href="https://commons.wikimedia.org/wiki/File:Netherlands_1932-09-30_R-cover_NVPH_169,_178,_189_reverse.jpg">Image</a> originaly uploaded to wikimedia commons.</small></p>
+					</section>
+					<section>
+						<h3>Signing</h3>
+						<h4>Dye pack</h4>
+						<img data-src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Dye_pack.jpg" class="stretch">
+						<p><small><a href="https://www.flickr.com/photos/76611741@N00/2160660520/">Image</a> originaly uploaded to flickr, and released as CC BY 2.0 by Colin Brown.</small></p>
+					</section>
+					<section>
+						<h3>Encryption</h3>
+						<h4>Scytale (100 BC)</h4>
+						<img data-src="https://upload.wikimedia.org/wikipedia/commons/5/51/Skytale.png" class="stretch">
+						<p><small><a href="https://commons.wikimedia.org/wiki/File:Skytale.png">Image</a> originaly uploaded to wikimedia commons, and released as CC BY-SA 3.0 by Luringen.</small></p>
+					</section>
+					<section>
+						<h3>Encryption</h3>
+						<h4>Caesar cipher (70 BC)</h4>
+						<img data-src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Caesar_cipher_left_shift_of_3.svg" class="stretch">
+						<p><small><a href="https://commons.wikimedia.org/wiki/File:Caesar_cipher_left_shift_of_3.svg">Image</a> originaly uploaded to wikimedia commons.</small></p>
+					</section>
+					<section>
+						<h3>Encryption</h3>
+						<h4>ROT-13</h4>
+						<img data-src="https://upload.wikimedia.org/wikipedia/commons/3/33/ROT13_table_with_example.svg" class="stretch">
+						<p><small><a href="https://commons.wikimedia.org/wiki/File:ROT13_table_with_example.svg">Image</a> originaly uploaded to wikimedia commons.</small></p>
+					</section>
+					<section>
+						<h3>Encryption</h3>
+						<h4>Zimmermann Telegram</h4>
+						<img data-src="https://upload.wikimedia.org/wikipedia/commons/1/14/Ztel2.jpg" class="stretch">
+						<p><small><a href="https://commons.wikimedia.org/wiki/File:Ztel2.jpg">Image</a> originaly uploaded to wikimedia commons.</small></p>
+					</section>
+					<section>
+						<h3>Encryption</h3>
+						<h4>Enigma</h4>
+						<img data-src="https://upload.wikimedia.org/wikipedia/commons/4/44/EnigmaMachine.jpg" class="stretch">
+						<p><small><a href="https://commons.wikimedia.org/wiki/File:EnigmaMachine.jpg">Image</a> originaly uploaded to wikimedia commons.</small></p>
+					</section>
+					<section>
+						<h3>Encryption</h3>
+						<h4>One time pad</h4>
+						<img data-src="https://www.cryptomuseum.com/crypto/img/301277/005/full.jpg" class="stretch">
+						<p><small><a href="https://www.cryptomuseum.com/crypto/otp/index.htm">Image</a> originaly uploaded to cryptomuseum.</small></p>
+					</section>
+				</section>
+				
+				
+				
+				<section>
+					<section>
+						<h2>Modern cryptography</h2>
+					</section>
+					<section>
+						<h3>Hashing</h3>
+						<h4>SHA-1</h4>
+						<img data-src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Cryptographic_Hash_Function.svg" class="stretch">
+						<p><small><a href="https://commons.wikimedia.org/wiki/File:Cryptographic_Hash_Function.svg">Image</a> originaly uploaded to wikimedia commons.</small></p>
+					</section>
+				</section>
+				
+				
+				
+				<section>
+					<section>
+						<h2>Public Key Encryption</h2>
+						<h2>asymmetric cryptography</h2>
+					</section>
+					<section>
+						<h3>Encryption basics</h3>
+						<img data-src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Public_key_encryption.svg" class="stretch">
+						<p><small><a href="https://commons.wikimedia.org/wiki/File:Public_key_encryption.svg">Image</a> originaly uploaded to wikimedia commons.</small></p>
+					</section>
+					<section>
+						<h3>Signing basics</h3>
+						<img data-src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Private_key_signing.png" class="stretch">
+						<p><small><a href="https://commons.wikimedia.org/wiki/File:Private_key_signing.png">Image</a> originaly uploaded to wikimedia commons.</small></p>
+					</section>
+					<section>
+						<p><a href="https://www.slideshare.net/Samrat_jain/rsa-algorithm-31726754">https://www.slideshare.net/Samrat_jain/rsa-algorithm-31726754</a></p>
+					</section>
+				</section>
+				
+				
+				<section>
+					<section>
+						<h2>HTTPS</h2>
+					</section>
+					<section>
+						<img data-src="https://www.ibm.com/support/knowledgecenter/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10660a.gif">
+						<p><small><a href="https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10660_.htm">Image</a> from IBM resource center.</small></p>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/markdown/marked.js' },
+					{ src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/markdown/markdown.js' },
+					{ src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/notes/notes.js', async: true },
+					{ src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
